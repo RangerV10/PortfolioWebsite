@@ -90,15 +90,54 @@ section {
     color: var(--text-higlight-color);
 }
 
-        #bottom-right {
-            grid-row-start: 8;
-            grid-row-end: 9;
-            grid-column-start: 9;
-            grid-column-end: 13;
+#bottom-right {
+    grid-row-start: 8;
+    grid-row-end: 9;
+    grid-column-start: 9;
+    grid-column-end: 13;
 
-        }
-        #bottom-right a { 
-            color:var(--TextColor);
-            text-decoration: none;
-            font-size: large;
-         }
+}
+
+#bottom-right a {
+    color: var(--TextColor);
+    text-decoration: none;
+    font-size: large;
+}
+
+section#bottom-center {
+    position: relative;
+    overflow: hidden;
+}
+
+div#contact-modal {
+    background-color: var(--section-bg-regular-color);
+    margin: auto;
+    padding: var(--section-padding);
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: 0 0 1em;
+}
+
+div#contact-modal::backdrop {
+    background-color: var(--container-bg-color);
+    opacity: 0.5;
+}
+
+button#contact-button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+button#contact-button:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+div#contact-text {
+    position: absolute;
+    bottom: 0.66em;
+    left: 0.5em;
+    font-size: xx-large;
+}
+
