@@ -13,11 +13,11 @@
 * {
     margin: 0;
     padding: 0;
-    --border-radius: 1em;
-    --container-padding: 0.5em;
+    --border-radius: 1rem;
+    --container-padding: 0.5rem;
     --body-padding: 3em;
-    --section-padding: 1em;
-    --section-margin: 0.5em;
+    --section-padding: 1rem;
+    --section-margin: 0.5rem;
 }
 
 body {
@@ -51,6 +51,10 @@ section {
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 13;
+    font-size: xx-large;
+    align-content: center;
+    padding: 0em;
+    padding-left: 1rem;
 }
 
 #top-left {
@@ -148,4 +152,3 @@ div#contact-text {
 address p {
     margin: 1em 1em;
 }
-
