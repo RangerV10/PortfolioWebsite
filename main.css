@@ -83,6 +83,7 @@ section {
     height: 100%;
     object-fit: cover;
     border-radius: 1em;
+
 }
 
 #top-right {
@@ -132,7 +133,7 @@ section {
 #bottom-right a {
     color: var(--black);
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 section#bottom-center {
