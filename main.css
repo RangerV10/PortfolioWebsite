@@ -64,6 +64,11 @@ section {
     grid-column-end: 6;
 }
 
+#top-left p {
+    font-size: x-large;
+    margin: 1rem 0em;
+}
+
 #top-center {
     grid-row-start: 2;
     grid-row-end: 6;
