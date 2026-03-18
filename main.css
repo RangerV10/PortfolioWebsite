@@ -95,11 +95,16 @@ section {
             grid-row-end: 9;
             grid-column-start: 9;
             grid-column-end: 13;
-
-        }
-        #bottom-right a { 
-            color:var(--TextColor);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
             text-decoration: none;
-            font-size: larger;
-
-         }
+        }
+        #bottom-right a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 1.8rem;
+        }
+     
