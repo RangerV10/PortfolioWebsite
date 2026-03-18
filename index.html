@@ -7,7 +7,8 @@
     <title>Portfolio Website</title>
     <style>
         * {
-            margin: 0; padding: 0;
+            margin: 0;
+            padding: 0;
             --border-radius: 1em;
             --container-padding: 0.5em;
             --body-padding: 3em;
@@ -59,6 +60,14 @@
             grid-row-end: 6;
             grid-column-start: 6;
             grid-column-end: 9;
+            padding: 0;
+        }
+
+        #top-center img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1em;
         }
 
         #top-right {
@@ -95,7 +104,7 @@
     <div id="grid-container">
         <section id="header-bar"></section>
         <section id="top-left"></section>
-        <section id="top-center"></section>
+        <section id="top-center"><img src="Profilbild.png" alt="Foto"></section>
         <section id="top-right"></section>
         <section id="bottom-left"></section>
         <section id="bottom-center"></section>
