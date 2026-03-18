@@ -86,4 +86,10 @@
             grid-row-end: 9;
             grid-column-start: 9;
             grid-column-end: 13;
+
         }
+        #bottom-right a { 
+            color:var(--TextColor);
+            text-decoration: none;
+            font-size: large;
+         }
