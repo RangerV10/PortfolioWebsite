@@ -125,19 +125,27 @@ div#contact-modal::backdrop {
 
 button#contact-button {
     position: absolute;
-    top: 1em;
-    right: 1em;
+    top: 0rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    font-size: 250%;
+    color: var(--text-higlight-color)
 }
 
 button#contact-button:hover {
     cursor: pointer;
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 div#contact-text {
     position: absolute;
-    bottom: 0.66em;
-    left: 0.5em;
+    bottom: 1rem;
+    left: 1rem;
     font-size: xx-large;
+}
+
+address p {
+    margin: 1em 1em;
 }
 
