@@ -119,3 +119,48 @@ section {
     text-decoration: none;
     font-size: 1.8rem;
 }
+
+section#bottom-center {
+    position: relative;
+    overflow: hidden;
+}
+
+div#contact-modal {
+    background-color: var(--section-bg-regular-color);
+    margin: auto;
+    padding: var(--section-padding);
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: 0 0 1em;
+}
+
+div#contact-modal::backdrop {
+    background-color: var(--container-bg-color);
+    opacity: 0.5;
+}
+
+button#contact-button {
+    position: absolute;
+    top: 0rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    font-size: 250%;
+    color: var(--text-higlight-color)
+}
+
+button#contact-button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+div#contact-text {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: xx-large;
+}
+
+address p {
+    margin: 1em 1em;
+}
