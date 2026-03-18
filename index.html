@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+            --border-radius: 1em;
+            --container-padding: 0.5em;
+            --body-padding: 3em;
+            --section-padding: 1em;
+            --section-margin: 0.5em;
+        }
+
+        body {
+            height: calc(100vh - var(--body-padding) * 2 - var(--container-padding) * 2);
+            width: calc(100vw - var(--body-padding) * 2 - var(--container-padding) * 2);
+            background-color: beige;
+            padding: var(--body-padding);
+        }
+
+        #grid-container {
+            display: grid;
+            grid-template-columns: repeat(12, 8.33%);
+            grid-template-rows: repeat(8, 12.5%);
+            background-color: dodgerblue;
+            border-radius: var(--border-radius);
+            padding: var(--container-padding);
+            height: 100%;
+            width: 100%;
+        }
+
+        section {
+            background-color: aquamarine;
+            padding: var(--section-padding);
+            margin: var(--section-margin);
+            border-radius: var(--border-radius);
+        }
+
+        #header-bar {
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 13;
+        }
+
+        #top-left {
+            grid-row-start: 2;
+            grid-row-end: 6;
+            grid-column-start: 1;
+            grid-column-end: 6;
+        }
+
+        #top-center {
+            grid-row-start: 2;
+            grid-row-end: 6;
+            grid-column-start: 6;
+            grid-column-end: 9;
+        }
+
+        #top-right {
+            grid-row-start: 2;
+            grid-row-end: 8;
+            grid-column-start: 9;
+            grid-column-end: 13;
+        }
+
+        #bottom-left {
+            grid-row-start: 6;
+            grid-row-end: 9;
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+
+        #bottom-center {
+            grid-row-start: 6;
+            grid-row-end: 9;
+            grid-column-start: 5;
+            grid-column-end: 9;
+        }
+
+        #bottom-right {
+            grid-row-start: 8;
+            grid-row-end: 9;
+            grid-column-start: 9;
+            grid-column-end: 13;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="grid-container">
+        <section id="header-bar"></section>
+        <section id="top-left"></section>
+        <section id="top-center"></section>
+        <section id="top-right"></section>
+        <section id="bottom-left"></section>
+        <section id="bottom-center"></section>
+        <section id="bottom-right"></section>
+    </div>
 </body>
+
 </html>
