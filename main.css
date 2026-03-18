@@ -100,5 +100,6 @@ section {
         #bottom-right a { 
             color:var(--TextColor);
             text-decoration: none;
-            font-size: large;
+            font-size: larger;
+
          }
