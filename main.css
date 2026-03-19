@@ -80,7 +80,8 @@ section::before {
 
 section:hover::before {
     left: 150%;
-    transition: left 1.2s ease-in-out; /* Langsamer & flüssiger */
+    transition: left 1.2s ease-in-out;
+    /* Langsamer & flüssiger */
 }
 
 /* ─── Header ─── */
@@ -95,7 +96,8 @@ section:hover::before {
 #header-bar:hover {
     transform: translateY(-3px);
     letter-spacing: 1px;
-    background-color: #c4d4b8; /* Minimaler Farb-Shift */
+    background-color: #c4d4b8;
+    /* Minimaler Farb-Shift */
 }
 
 /* ─── Top Left ─── */
@@ -106,7 +108,7 @@ section:hover::before {
 
 #top-left:hover {
     transform: scale(1.01) translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 #top-left p {
@@ -140,7 +142,8 @@ section:hover::before {
 }
 
 #top-center:hover img {
-    transform: scale(1.1) rotate(1deg); /* Counter-Rotation Effekt */
+    transform: scale(1.1) rotate(1deg);
+    /* Counter-Rotation Effekt */
     filter: brightness(1.1) saturate(1.1);
 }
 
@@ -179,9 +182,9 @@ section:hover::before {
 
 #bottom-center:hover {
     transform: scale(1.02);
-    box-shadow: 
+    box-shadow:
         0 0 20px rgba(187, 202, 173, 0.2),
-        0 15px 30px rgba(0,0,0,0.3);
+        0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* ─── Bottom Right (Bounce Links) ─── */
@@ -229,7 +232,7 @@ div#contact-modal {
     padding: var(--section-padding);
     border-radius: var(--border-radius);
     border: none;
-    box-shadow: 0 0 2em rgba(0,0,0,0.4);
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.4);
 }
 
 button#contact-button {
@@ -358,6 +361,7 @@ address p {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    overflow: hidden;
 }
 
 #intro-video {
