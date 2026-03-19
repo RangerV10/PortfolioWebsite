@@ -9,26 +9,30 @@
 </head>
 
 <body>
+
     <div id="intro-overlay" onclick="closeIntro()">
-        <iframe id="intro-frame"
-            src="https://www.youtube.com/embed/lBGzqXoRPIk?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=lBGzqXoRPIk"
-            allow="autoplay; encrypted-media" allowfullscreen>
-        </iframe>
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="VideoBeispiel.mp4" type="video/mp4">
+            Dein Browser unterstützt kein Video.
+        </video>
         <div
-            style="position:absolute; bottom:20px; color:white; font-family:sans-serif; opacity:0.6; pointer-events:none;">
+            style="position:absolute; bottom:20px; color:white; font-family:sans-serif; opacity:0.5; pointer-events:none;">
             Klicken zum Überspringen
         </div>
     </div>
 
     <div id="grid-container">
         <section id="header-bar">Cherry-Sue Koslowski</section>
+
         <section id="top-left">
-            <p>Hey, ich bin <strong>Cherry-Sue</strong>, deine Deveoloperin für alle Fälle.</p>
+            <p>Hey, ich bin <strong>Cherry-Sue</strong>, deine Developerin für alle Fälle.</p>
             <p>Was soll ich für dich entwickeln?</p>
         </section>
-        <section id="top-center">
+
+        <section id="top-center" onclick="openIntro()" style="cursor:pointer;">
             <img src="Profilbild.png" alt="Foto">
         </section>
+
         <section id="top-right">
             <p>Vom durchgestylten Webauftritt bis zur professionellen Unternehmenssoftware – <em>ich kann alles</em>!
             </p>
@@ -50,14 +54,17 @@
             </ul>
             <p>…und vieles mehr!</p>
         </section>
+
         <section id="bottom-left">
             <p>Ich bringe Ideen mit Code zum Leben. 💻
                 Mit Leidenschaft entwickle ich Lösungen, die funktionieren und begeistern. 🚀</p>
         </section>
+
         <section id="bottom-center">
             <button id="contact-button" popovertarget="contact-modal">↗</button>
             <div id="contact-text">Contact <i>me</i></div>
         </section>
+
         <section id="bottom-right">
             <a href="https://linkedin.com">LinkedIn</a>
             <a href="#">GitHub</a>
@@ -72,6 +79,8 @@
             <p>+49 157 404-0101-0<br>cherrysue@web.de</p>
         </address>
     </div>
+
+    <script src="video.js"></script>
 
 </body>
 
