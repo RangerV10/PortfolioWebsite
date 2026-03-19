@@ -44,6 +44,7 @@ body {
 
 
 #grid-container {
+    min-width: 860px;
     display: grid;
     background-color: var(--container-bg-color);
     border-radius: var(--border-radius);
