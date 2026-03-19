@@ -1,22 +1,29 @@
 // @ts-nocheck
 
-// 1. Variable für den Timer global initialisieren
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
+ * ANLEITUNG FÜR ENTWICKLER: INTRO AN/AUS SCHALTEN
+ * ─────────────────────────────────────────────────────────────────────────────
+ * 1. Öffne die Browser-Konsole (F12).
+ * 2. Tippe den Befehl: toggleIntro() ein und drücke Enter.
+ * Dies speichert deine Präferenz dauerhaft im Browser-Speicher.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+
 let introTimer = null;
 
-// 2. Funktion zum Schließen des Intros (Überspringen)
+// 1. Funktion zum Schließen
 function closeIntro() {
   const overlay = document.getElementById('intro-overlay');
-  const iframe = document.getElementById('intro-frame');
+  const video = document.getElementById('intro-video');
 
   if (overlay) {
-    overlay.style.display = 'none';
-
-    // Stoppt das YouTube Video, indem die Quelle geleert wird
-    if (iframe) {
-      iframe.setAttribute("src", "");
+    overlay.style.display = 'none'; // Hier wird es unsichtbar
+    if (video instanceof HTMLVideoElement) {
+      video.pause();
     }
-
-    // Falls ein Timer läuft, wird dieser gestoppt
+    // Timer löschen, falls einer läuft
     if (introTimer !== null) {
       clearTimeout(introTimer);
       introTimer = null;
@@ -24,29 +31,53 @@ function closeIntro() {
   }
 }
 
-// 3. Funktion zum erneuten Öffnen (via Profilbild)
+// 2. Funktion zum Öffnen (Immer möglich, auch wenn Toggle "aus" ist)
 function openIntro() {
   const overlay = document.getElementById('intro-overlay');
-  const iframe = document.getElementById('intro-frame');
+  const video = document.getElementById('intro-video');
 
-  if (overlay && iframe) {
-    // Die YouTube URL für dein Prozessor-Video
-    const videoUrl = "https://www.youtube.com/embed/lBGzqXoRPIk?autoplay=1&mute=1&controls=0&showinfo=0&rel=0";
-    iframe.setAttribute("src", videoUrl);
+  if (overlay && video instanceof HTMLVideoElement) {
+    overlay.style.display = 'flex'; // Zwingt das Overlay zur Anzeige
+    video.currentTime = 0;
 
-    overlay.style.display = 'flex';
+    // WICHTIG: Ein kleiner Delay für den Play-Befehl hilft Browsern
+    video.play().catch(e => console.log("Autoplay blockiert:", e));
 
-    // Automatisches Schließen nach 6 Sekunden (Video-Länge)
-    introTimer = setTimeout(closeIntro, 6000);
+    // Starte den Timer zum automatischen Schließen (5 Sek)
+    if (introTimer) clearTimeout(introTimer);
+    introTimer = setTimeout(closeIntro, 5000);
   }
 }
 
-// 4. Funktionen global verfügbar machen, damit das HTML sie findet
+// 3. Der Toggle-Schalter (Licht an / Licht aus)
+function toggleIntro() {
+  const isCurrentlyDisabled = localStorage.getItem('disableIntro') === 'true';
+  localStorage.setItem('disableIntro', !isCurrentlyDisabled ? 'true' : 'false');
+
+  const status = !isCurrentlyDisabled ? "DEAKTIVIERT" : "AKTIVIERT";
+  alert("Entwickler-Modus: Intro wurde für dich " + status + ".");
+  location.reload();
+}
+
+// Global verfügbar machen
 window.closeIntro = closeIntro;
 window.openIntro = openIntro;
+window.toggleIntro = toggleIntro;
 
-// 5. Automatischer Start beim ersten Laden der Seite
-window.onload = () => {
-  // Startet den 6-Sekunden-Countdown für das erste Mal
-  introTimer = setTimeout(closeIntro, 6000);
-};
+// 4. Die Start-Logik beim Laden der Seite
+window.addEventListener('load', () => {
+  const isIntroDisabled = localStorage.getItem('disableIntro') === 'true';
+
+  if (isIntroDisabled) {
+    // Falls deaktiviert: Overlay gar nicht erst zeigen
+    console.log("🛠️ Intro übersprungen (Entwickler-Modus)");
+    closeIntro();
+  } else {
+    // Falls aktiviert: Normaler Ablauf
+    // Wir stellen sicher, dass es sichtbar ist und starten den Timer
+    const overlay = document.getElementById('intro-overlay');
+    if (overlay) overlay.style.display = 'flex';
+
+    introTimer = setTimeout(closeIntro, 5000);
+  }
+});
