@@ -1,52 +1,67 @@
 // @ts-nocheck
 
-// 1. Variable für den Timer global initialisieren
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
+ * ANLEITUNG FÜR ENTWICKLER: INTRO AN/AUS SCHALTEN
+ * ─────────────────────────────────────────────────────────────────────────────
+ * 1. Öffne die Browser-Konsole (F12).
+ * 2. Tippe den Befehl: toggleIntro() ein und drücke Enter.
+ * Dies speichert deine Präferenz dauerhaft im Browser-Speicher.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
 let introTimer = null;
 
-// 2. Funktion zum Schließen des Intros (Überspringen)
 function closeIntro() {
   const overlay = document.getElementById('intro-overlay');
-  const iframe = document.getElementById('intro-frame');
+  const video = document.getElementById('intro-video');
 
   if (overlay) {
     overlay.style.display = 'none';
-
-    // Stoppt das YouTube Video, indem die Quelle geleert wird
-    if (iframe) {
-      iframe.setAttribute("src", "");
+    if (video instanceof HTMLVideoElement) {
+      video.pause();
     }
-
-    // Falls ein Timer läuft, wird dieser gestoppt
-    if (introTimer !== null) {
+    if (introTimer) {
       clearTimeout(introTimer);
       introTimer = null;
     }
   }
 }
 
-// 3. Funktion zum erneuten Öffnen (via Profilbild)
 function openIntro() {
   const overlay = document.getElementById('intro-overlay');
-  const iframe = document.getElementById('intro-frame');
+  const video = document.getElementById('intro-video');
 
-  if (overlay && iframe) {
-    // Die YouTube URL für dein Prozessor-Video
-    const videoUrl = "https://www.youtube.com/embed/lBGzqXoRPIk?autoplay=1&mute=1&controls=0&showinfo=0&rel=0";
-    iframe.setAttribute("src", videoUrl);
-
+  if (overlay && video instanceof HTMLVideoElement) {
     overlay.style.display = 'flex';
-
-    // Automatisches Schließen nach 6 Sekunden (Video-Länge)
-    introTimer = setTimeout(closeIntro, 6000);
+    video.currentTime = 0;
+    video.play();
+    introTimer = setTimeout(closeIntro, 5000);
   }
 }
 
-// 4. Funktionen global verfügbar machen, damit das HTML sie findet
+function toggleIntro() {
+  const isCurrentlyDisabled = localStorage.getItem('disableIntro') === 'true';
+  localStorage.setItem('disableIntro', !isCurrentlyDisabled ? 'true' : 'false');
+
+  const status = !isCurrentlyDisabled ? "DEAKTIVIERT" : "AKTIVIERT";
+  alert("Entwickler-Modus: Intro wurde für dich " + status + ".");
+  location.reload();
+}
+
+// Funktionen für HTML verfügbar machen
 window.closeIntro = closeIntro;
 window.openIntro = openIntro;
+window.toggleIntro = toggleIntro;
 
-// 5. Automatischer Start beim ersten Laden der Seite
-window.onload = () => {
-  // Startet den 6-Sekunden-Countdown für das erste Mal
-  introTimer = setTimeout(closeIntro, 6000);
-};
+// Start-Logik beim Laden
+window.addEventListener('load', () => {
+  const isIntroDisabled = localStorage.getItem('disableIntro') === 'true';
+
+  if (isIntroDisabled) {
+    console.log("🛠️ Intro deaktiviert per LocalStorage (toggleIntro).");
+    closeIntro();
+  } else {
+    introTimer = setTimeout(closeIntro, 5000);
+  }
+});
