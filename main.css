@@ -291,6 +291,8 @@ address p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Dieser Befehl lässt den Klick zum Div durchgehen: */
+    pointer-events: none;
 }
 
 /* Kleiner Effekt für das Profilbild, damit man sieht, dass es klickbar ist */
