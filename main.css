@@ -326,21 +326,26 @@ address p {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100vw;
     height: 100vh;
     background-color: #000;
-    z-index: 99999;
+    z-index: 999999;
+    /* Extrem hoch, damit nichts drüber liegt */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     overflow: hidden;
+    /* WICHTIG: Kein Scrollen im Overlay selbst */
 }
 
 #intro-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Füllt den Raum aus, ohne zu verzerren */
+    display: block;
     pointer-events: none;
-    /* Klicks fallen durch auf das Overlay-Div */
 }
