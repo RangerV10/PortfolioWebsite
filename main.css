@@ -322,30 +322,42 @@ address p {
 }
 
 
+/* ─── Absoluter Fullscreen-Fix (Kein Scrollen!) ────────── */
+
 #intro-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000;
-    z-index: 999999;
-    /* Extrem hoch, damit nichts drüber liegt */
+    position: fixed !important;
+    /* Löst das Video vom Rest der Seite */
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: #000 !important;
+    z-index: 999999 !important;
+    /* Überlagert alles, auch Barrierefreiheits-Anpassungen */
+
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    overflow: hidden;
-    /* WICHTIG: Kein Scrollen im Overlay selbst */
+    overflow: hidden !important;
+    /* Killt Scrollbalken */
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 #intro-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Füllt den Raum aus, ohne zu verzerren */
-    display: block;
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+    /* Füllt den Schirm ohne Verzerrung */
+
+    position: absolute;
+    top: 0;
+    left: 0;
     pointer-events: none;
+}
+
+/* Verhindert, dass der Hintergrund wackelt oder scrollt */
+body:has(#intro-overlay[style*="display: flex"]) {
+    overflow: hidden !important;
+    height: 100vh !important;
 }
