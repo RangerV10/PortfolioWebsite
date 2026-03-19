@@ -10,7 +10,6 @@
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
-
 let introTimer = null;
 
 // 1. Funktion zum Schließen
@@ -20,42 +19,58 @@ function closeIntro() {
 
   if (overlay) {
     overlay.style.display = 'none'; // Hier wird es unsichtbar
+
+    // WICHTIG: Scrollen wieder erlauben, wenn das Video weg ist
+    document.body.style.overflow = "auto";
+
     if (video instanceof HTMLVideoElement) {
       video.pause();
     }
+
     // Timer löschen, falls einer läuft
     if (introTimer !== null) {
       clearTimeout(introTimer);
       introTimer = null;
     }
+
+    // Die Animationen von Jens starten
     appendAnimationClasses();
   }
 }
 
+// Hilfsfunktion für Jens' Animationen
 function appendAnimationClasses() {
-  document.getElementById('grid-container').classList.add('fadeInFast');
-  document.getElementById('header-bar').classList.add('slideInFromTop');
-  document.getElementById('top-left').classList.add('slideInFromLeft');
-  document.getElementById('top-center').classList.add('fadeInSlow');
-  document.getElementById('top-right').classList.add('slideInFromRight');
-  document.getElementById('bottom-left').classList.add('slideInFromBottomLeft');
-  document.getElementById('bottom-center').classList.add('slideInFromBottomCenter');
-  document.getElementById('bottom-right').classList.add('slideInFromBottomRight');
+  const elements = {
+    'grid-container': 'fadeInFast',
+    'header-bar': 'slideInFromTop',
+    'top-left': 'slideInFromLeft',
+    'top-center': 'fadeInSlow',
+    'top-right': 'slideInFromRight',
+    'bottom-left': 'slideInFromBottomLeft',
+    'bottom-center': 'slideInFromBottomCenter',
+    'bottom-right': 'slideInFromBottomRight'
+  };
+
+  for (const [id, className] of Object.entries(elements)) {
+    const el = document.getElementById(id);
+    if (el) el.classList.add(className);
+  }
 }
 
-// 3. Funktion zum erneuten Öffnen (via Profilbild)
+// 2. Funktion zum Öffnen (via Profilbild)
 function openIntro() {
   const overlay = document.getElementById('intro-overlay');
   const video = document.getElementById('intro-video');
 
   if (overlay && video instanceof HTMLVideoElement) {
     overlay.style.display = 'flex'; // Zwingt das Overlay zur Anzeige
-    video.currentTime = 0;
 
-    // WICHTIG: Ein kleiner Delay für den Play-Befehl hilft Browsern
+    // WICHTIG: Scrollen sperren, während das Video läuft
+    document.body.style.overflow = "hidden";
+
+    video.currentTime = 0;
     video.play().catch(e => console.log("Autoplay blockiert:", e));
 
-    // Starte den Timer zum automatischen Schließen (5 Sek)
     if (introTimer) clearTimeout(introTimer);
     introTimer = setTimeout(closeIntro, 5000);
   }
@@ -81,14 +96,21 @@ window.addEventListener('load', () => {
   const isIntroDisabled = localStorage.getItem('disableIntro') === 'true';
 
   if (isIntroDisabled) {
-    // Falls deaktiviert: Overlay gar nicht erst zeigen
     console.log("🛠️ Intro übersprungen (Entwickler-Modus)");
     closeIntro();
   } else {
-    // Falls aktiviert: Normaler Ablauf
-    // Wir stellen sicher, dass es sichtbar ist und starten den Timer
     const overlay = document.getElementById('intro-overlay');
-    if (overlay) overlay.style.display = 'flex';
+    const video = document.getElementById('intro-video');
+
+    if (overlay) {
+      overlay.style.display = 'flex';
+      // Beim Start sofort Scrollen verhindern
+      document.body.style.overflow = "hidden";
+
+      if (video instanceof HTMLVideoElement) {
+        video.play().catch(e => console.log("Autoplay beim Start verhindert:", e));
+      }
+    }
 
     introTimer = setTimeout(closeIntro, 5000);
   }
