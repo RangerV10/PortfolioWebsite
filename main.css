@@ -106,6 +106,14 @@
             grid-column: 9 / 13;
         }
 
+        #top-right p, #top-right ul {
+            margin-bottom: 0.5rem;
+        }
+
+        #top-right ul {
+            padding-left: 1em;
+            font-size: 85%;
+        }
        
         #bottom-left {
             grid-row: 6 / 9;
