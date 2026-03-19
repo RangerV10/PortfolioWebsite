@@ -278,25 +278,18 @@ address p {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: #000;
     z-index: 99999;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    /* Zeigt, dass man hier klicken kann */
 }
 
-#intro-video {
+#intro-frame {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    /* Dieser Befehl lässt den Klick zum Div durchgehen: */
+    border: none;
     pointer-events: none;
-}
-
-/* Kleiner Effekt für das Profilbild, damit man sieht, dass es klickbar ist */
-#top-center:hover img {
-    filter: brightness(0.8);
-    transition: 0.3s;
+    /* Klicks gehen durch auf das Overlay */
 }
