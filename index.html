@@ -29,8 +29,10 @@
             <img src="Profilbild.png" alt="Foto">
         </section>
         <section id="top-right">
-            <p>Vom durchgestylten Webauftritt bis zur professionellen Unternehmenssoftware – <em>ich kann alles</em>!</p>
-            <p>Dynamische Internetseiten mit <strong>React</strong>, <strong>Angular</strong> und <strong>Vue</strong>:</p>
+            <p>Vom durchgestylten Webauftritt bis zur professionellen Unternehmenssoftware – <em>ich kann alles</em>!
+            </p>
+            <p>Dynamische Internetseiten mit <strong>React</strong>, <strong>Angular</strong> und <strong>Vue</strong>:
+            </p>
             <ul>
                 <li>Pizzeria Alfred Walther</li>
                 <li>Reisebüro „Nix wie weg“</li>
@@ -71,26 +73,31 @@
     </div>
 
     <script>
+        // Wir holen uns die Elemente aus dem HTML
         const overlay = document.getElementById('intro-overlay');
         const video = document.getElementById('intro-video');
 
-        // Funktion zum Schließen
+        // 1. Die Funktion zum Schließen (Überspringen)
         function closeIntro() {
-            overlay.style.display = 'none';
-            video.pause(); // Video stoppen
+            if (overlay) {
+                overlay.style.display = 'none'; // Versteckt das ganze schwarze Fenster
+                video.pause();                 // Stoppt das Video im Hintergrund
+            }
         }
 
-        // Funktion zum erneuten Öffnen (via Profilbild)
+        // 2. Die Funktion zum erneuten Öffnen (über das Profilbild)
         function openIntro() {
-            overlay.style.display = 'flex';
-            video.currentTime = 0; // Video von vorne starten
-            video.play();
+            if (overlay) {
+                overlay.style.display = 'flex'; // Zeigt das Fenster wieder an
+                video.currentTime = 0;          // Spult das Video auf Anfang
+                video.play();                   // Startet das Video
 
-            // Automatisches Schließen nach 14 Sekunden einrichten
-            setTimeout(closeIntro, 14000);
+                // Optional: Nach 14 Sek wieder automatisch schließen
+                setTimeout(closeIntro, 14000);
+            }
         }
 
-        // Automatisches Schließen beim ersten Laden nach 14 Sek.
+        // 3. Automatischer Timer beim ersten Laden der Seite (14 Sekunden)
         window.onload = () => {
             setTimeout(closeIntro, 14000);
         };
