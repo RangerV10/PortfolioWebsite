@@ -259,13 +259,14 @@ address p {
         gap: 0.25rem;
     }
 
-    #bottom-right a {
-        font-size: 1rem;
-    }
+            #bottom-right a {
+                font-size: 0.9rem;
+            }
 
-    div#contact-text {
-        font-size: large;
-    }
+            div#contact-text {
+                font-size: large;
+                
+            }
 
     button#contact-button {
         font-size: 150%;
