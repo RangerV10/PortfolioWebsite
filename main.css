@@ -78,10 +78,6 @@ section::before {
     border-radius: inherit;
 }
 
-section:hover::before {
-    left: 150%;
-    transition: left 1.2s ease-in-out; /* Langsamer & flüssiger */
-}
 
 /* ─── Header ─── */
 #header-bar {
@@ -92,11 +88,7 @@ section:hover::before {
     padding: 0 1rem;
 }
 
-#header-bar:hover {
-    transform: translateY(-3px);
-    letter-spacing: 1px;
-    background-color: #c4d4b8; /* Minimaler Farb-Shift */
-}
+
 
 /* ─── Top Left ─── */
 #top-left {
@@ -135,14 +127,6 @@ section:hover::before {
         filter 0.5s ease;
 }
 
-#top-center:hover {
-    transform: rotate(-1deg) scale(1.00);
-}
-
-#top-center:hover img {
-    transform: scale(1.1) rotate(1deg); /* Counter-Rotation Effekt */
-    filter: brightness(1.1) saturate(1.1);
-}
 
 /* ─── Top Right ─── */
 #top-right {
@@ -150,12 +134,7 @@ section:hover::before {
     grid-column: 9 / 13;
 }
 
-#top-right:hover {
-    transform: translateX(5px) scale(1.02);
-    box-shadow: -6px 0 30px rgba(187, 202, 173, 0.4),
-        0 12px 40px rgba(9, 48, 77, 0.4);
-    background-color: #c8d9ba;
-}
+
 
 #bottom-left {
     grid-row: 6 / 9;
@@ -164,9 +143,7 @@ section:hover::before {
     align-items: flex-end;
 }
 
-#bottom-left:hover {
-    transform: translate(5px, -5px);
-}
+
 
 /* ─── Bottom Center (Magnetisches Leuchten) ─── */
 #bottom-center {
@@ -177,12 +154,7 @@ section:hover::before {
     position: relative;
 }
 
-#bottom-center:hover {
-    transform: scale(1.02);
-    box-shadow: 
-        0 0 20px rgba(187, 202, 173, 0.2),
-        0 15px 30px rgba(0,0,0,0.3);
-}
+
 
 /* ─── Bottom Right (Bounce Links) ─── */
 #bottom-right {
@@ -203,24 +175,9 @@ section:hover::before {
     display: inline-block;
 }
 
-#bottom-right a:hover {
-    transform: translateY(-8px) scale(1.2);
-    color: var(--dark-blue);
-    text-shadow: 0 4px 15px rgba(9, 48, 77, 0.4);
-}
 
 /* Verzögerung für gestaffelten Sprung */
-#bottom-right a:nth-child(1):hover {
-    transition-delay: 0s;
-}
 
-#bottom-right a:nth-child(2):hover {
-    transition-delay: 0.05s;
-}
-
-#bottom-right a:nth-child(3):hover {
-    transition-delay: 0.1s;
-}
 
 /* ─── Contact Modal ──────────────────────────────────────── */
 div#contact-modal {
@@ -247,11 +204,7 @@ button#contact-button {
     z-index: 2;
 }
 
-button#contact-button:hover {
-    transform: scale(1.35) rotate(45deg);
-    color: #fff;
-    text-shadow: 0 0 20px rgba(187, 202, 173, 0.568);
-}
+
 
 div#contact-text {
     position: absolute;
@@ -261,10 +214,7 @@ div#contact-text {
     transition: transform 0.3s ease, letter-spacing 0.3s ease;
 }
 
-#bottom-center:hover div#contact-text {
-    transform: translateY(-4px);
-    letter-spacing: 0.06em;
-}
+
 
 address p {
     margin: 1em;
