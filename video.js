@@ -21,7 +21,19 @@ function closeIntro() {
       clearTimeout(introTimer);
       introTimer = null;
     }
+    appendAnimationClasses();
   }
+}
+
+function appendAnimationClasses() {
+  document.getElementById('grid-container').classList.add('fadeInFast');
+  document.getElementById('header-bar').classList.add('slideInFromTop');
+  document.getElementById('top-left').classList.add('slideInFromLeft');
+  document.getElementById('top-center').classList.add('fadeInSlow');
+  document.getElementById('top-right').classList.add('slideInFromRight');
+  document.getElementById('bottom-left').classList.add('slideInFromBottomLeft');
+  document.getElementById('bottom-center').classList.add('slideInFromBottomCenter');
+  document.getElementById('bottom-right').classList.add('slideInFromBottomRight');
 }
 
 // 3. Funktion zum erneuten Öffnen (via Profilbild)

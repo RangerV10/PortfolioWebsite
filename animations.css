@@ -1,0 +1,100 @@
+* {
+    --slide-in-distance: -10rem;
+    --slide-in-duration: 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.0;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        left: var(--slide-in-distance);
+    }
+
+    to {
+        left: 0rem;
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        right: var(--slide-in-distance);
+    }
+
+    to {
+        right: 0rem;
+    }
+}
+
+@keyframes slideFromTop {
+    from {
+        top: var(--slide-in-distance);
+    }
+
+    to {
+        top: 0rem;
+    }
+}
+
+@keyframes slideFromBottom {
+    from {
+        bottom: var(--slide-in-distance);
+    }
+
+    to {
+        bottom: 0rem;
+    }
+}
+
+.slideInFromLeft {
+    position: relative;
+    animation-name: slideFromLeft;
+    animation-duration: var(--slide-in-duration);
+}
+
+.slideInFromBottomLeft {
+    position: relative;
+    animation-name: slideFromLeft, slideFromBottom;
+    animation-duration: var(--slide-in-duration);
+}
+
+.slideInFromRight {
+    position: relative;
+    animation-name: slideFromRight;
+    animation-duration: var(--slide-in-duration);
+}
+
+.slideInFromBottomRight {
+    position: relative;
+    animation-name: slideFromRight, slideFromBottom;
+    animation-duration: var(--slide-in-duration);
+}
+
+.slideInFromBottomCenter {
+    position: relative;
+    animation-name: slideFromBottom;
+    animation-duration: var(--slide-in-duration);
+}
+
+.slideInFromTop {
+    position: relative;
+    animation-name: slideFromTop;
+    animation-duration: var(--slide-in-duration);
+}
+
+.fadeInSlow {
+    animation-name: fadeIn;
+    animation-duration: calc(var(--slide-in-duration) - var(--slide-in-duration) * 0.25);
+}
+
+.fadeInFast {
+    animation-name: fadeIn;
+    animation-duration: calc(var(--slide-in-duration) - var(--slide-in-duration) * 0.5);
+}
