@@ -251,11 +251,12 @@
             }
 
             #bottom-right a {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             div#contact-text {
                 font-size: large;
+                
             }
 
             button#contact-button {
