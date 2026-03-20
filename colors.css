@@ -13,7 +13,9 @@
     --container-bg-color: var(--dark-blue);
     --site-bg-color: var(--light-blue);
 
-    --switch-bg: #8fa1ba;
+    --switch-bg: var(--light-blue);
     --switch-knob: #ffffff;
-    --switch-checked-bg: #23314a;
+    --switch-checked-bg: var(--dark-blue);
+
+    --border-color: var(--dark-blue);
 }
