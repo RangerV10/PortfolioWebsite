@@ -1,22 +1,93 @@
 @import "animations.css";
-@import "hover.css";    
+@import "hover.css";
+@import "colors.css";
 
-:root {
-    --black: #11120F;
-    --beige: #D2C9B2;
-    --gray: #4C4B42;
-    --light-green: #BBCAAD;
-    --dark-green: #193416;
-    --dark-blue: #09304D;
-    --medium-blue: #0C3A5C;
-    --light-blue: #124B76;
+
+/* ─── Dark Mode Variables ─── */
+[data-theme="dark"] {
+    /* Deine gewünschten Darkmode-Farben */
+    --black: #000000;
+    --beige: #1a1a1a;
+    --gray: #2d2d2d;
+
+    /* Der Farbtausch laut deinen Bildern */
+    --light-green: #23314A;
+    /* Die Kacheln werden dunkelblau */
+    --dark-green: #DB8084;
+    /* Der Text in den Kacheln wird rosa */
+
+    /* Anpassungen für die restlichen Elemente */
+    --dark-blue: #DB8084;
+    /* Der Hintergrund von "bottom-center" wird rosa */
+    --medium-blue: #111a26;
+    /* Der Container im Hintergrund wird sehr dunkel */
+    --light-blue: #090e14;
+    /* Der Body-Hintergrund wird fast schwarz */
+
     --text-regular-color: var(--dark-green);
     --text-highlight-color: var(--light-green);
+    /* Text in der "Contact me" Kachel wird blau */
     --text-link-color: var(--dark-green);
+
     --section-bg-highlight-color: var(--dark-blue);
     --section-bg-regular-color: var(--light-green);
     --container-bg-color: var(--medium-blue);
     --site-bg-color: var(--light-blue);
+}
+
+/* ─── Style für den Toggle-Schalter ─── */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: var(--gray);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: var(--beige);
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+}
+
+input:checked+.slider {
+    background-color: var(--dark-green);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 * {
@@ -104,7 +175,7 @@ section::before {
     grid-column-end: 13;
 }
 
-        
+
 /* ─── Top Left ─── */
 #top-left {
     grid-row: 2 / 6;
