@@ -1,5 +1,5 @@
 /* ─── Dark Mode Variables ─── */
-[data-theme="dark"] {
+:root[data-theme="dark"] {
     /* Deine gewünschten Darkmode-Farben */
     --black: #000000;
     --beige: #1a1a1a;
