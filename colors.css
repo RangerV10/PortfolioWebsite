@@ -9,4 +9,9 @@ body {
     --section-bg-regular-color: var(--rose);
     --container-bg-color: var(--dark-blue);
     --site-bg-color: var(--light-blue);
+
+    /* Toggle Schalter: Lightmode */
+    --switch-bg: #8fa1ba;
+    --switch-knob: #ffffff;
+    --switch-checked-bg: #23314a;
 }
