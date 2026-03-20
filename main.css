@@ -1,34 +1,23 @@
 /* ─── Dark Mode Variables ─── */
 :root[data-theme="dark"] {
-    /* Deine gewünschten Darkmode-Farben */
+
+    --section-bg-regular-color: #23314A;
+    --text-regular-color: #DB8084;
+
+    --section-bg-highlight-color: #DB8084;
+    --text-highlight-color: #23314A;
+
+
+    --text-link-color: #DB8084;
+
+    --container-bg-color: #111a26;
+    --site-bg-color: #090e14;
+
     --black: #000000;
     --beige: #1a1a1a;
     --gray: #2d2d2d;
-
-    /* Der Farbtausch laut deinen Bildern */
-    --light-green: #23314A;
-    /* Die Kacheln werden dunkelblau */
-    --dark-green: #DB8084;
-    /* Der Text in den Kacheln wird rosa */
-
-    /* Anpassungen für die restlichen Elemente */
-    --dark-blue: #DB8084;
-    /* Der Hintergrund von "bottom-center" wird rosa */
-    --medium-blue: #111a26;
-    /* Der Container im Hintergrund wird sehr dunkel */
-    --light-blue: #090e14;
-    /* Der Body-Hintergrund wird fast schwarz */
-
-    --text-regular-color: var(--dark-green);
-    --text-highlight-color: var(--light-green);
-    /* Text in der "Contact me" Kachel wird blau */
-    --text-link-color: var(--dark-green);
-
-    --section-bg-highlight-color: var(--dark-blue);
-    --section-bg-regular-color: var(--light-green);
-    --container-bg-color: var(--medium-blue);
-    --site-bg-color: var(--light-blue);
 }
+
 
 /* ─── Style für den Toggle-Schalter ─── */
 .theme-switch-wrapper {
