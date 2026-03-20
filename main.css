@@ -297,21 +297,29 @@ address p {
 }
 
 /* ─── Mobile ─────────────────────────────────────────────── */
-@media (max-width: 900px) {
-    body {
-        padding: 1rem;
+@media (max-width: 430px) {
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
         min-width: unset !important;
-        overflow-x: hidden;
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+ 
+    body {
+        padding: 0.4rem !important;
     }
  
     #grid-container {
         display: flex !important;
         flex-direction: column !important;
-        min-height: unset !important;
+        min-height: 100vh !important;
         min-width: unset !important;
         width: 100% !important;
         height: auto !important;
-        gap: 0;
+        gap: 0 !important;
+        border-radius: 0.5rem !important;
+        margin: 0 !important;
     }
  
     section,
@@ -329,77 +337,220 @@ address p {
         height: auto !important;
         min-height: unset !important;
         max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
  
     #header-bar {
-        font-size: large;
-        padding: 0.75rem 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        font-size: 0.95rem !important;
+        padding: 0.6rem 0.8rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
     }
  
-    /* Schwarzen Punkt verstecken */
-    #header-bar > *:not(h1):not(div):not(a) {
-        display: none;
+    #header-bar h1 {
+        font-size: 1.1rem !important;
+    }
+ 
+    #top-left {
+        padding: 0.75rem !important;
     }
  
     #top-left p {
-        font-size: medium;
-        margin: 0.5rem 0;
+        font-size: 0.95rem !important;
+        margin: 0.4rem 0 !important;
     }
  
     #top-center {
-        aspect-ratio: 16 / 9;
-        overflow: hidden;
+        aspect-ratio: 4 / 3 !important;
+        overflow: hidden !important;
     }
  
     #top-center img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+    }
+ 
+    #top-right {
+        padding: 0.75rem !important;
+        font-size: 0.9rem !important;
     }
  
     #bottom-left {
-        align-items: flex-start;
+        align-items: flex-start !important;
+        padding: 0.75rem !important;
     }
  
     #bottom-left p {
-        font-size: small;
+        font-size: 0.85rem !important;
     }
  
     #bottom-center {
-        min-height: 6rem !important;
+        min-height: unset !important;
+        padding: 0.75rem !important;
     }
  
     #bottom-right {
-        gap: 0.5rem;
-        padding: 0.75rem 1rem;
-        justify-content: flex-start;
-        flex-wrap: wrap;
+        gap: 0.5rem !important;
+        padding: 0.75rem !important;
+        justify-content: flex-start !important;
+        flex-wrap: wrap !important;
     }
  
     #bottom-right a {
-        font-size: 1.2rem;
+        font-size: 1rem !important;
     }
  
     div#contact-text {
-        font-size: large;
+        font-size: 1rem !important;
     }
  
     button#contact-button {
-        font-size: 150%;
+        font-size: 130% !important;
     }
  
     #legal {
-        overflow-y: visible;
+        overflow-y: visible !important;
+        padding: 0.75rem !important;
     }
  
-    #legal h2 { font-size: large; }
-    #legal h3 { font-size: medium; }
+    #legal h2 { font-size: 1.1rem !important; }
+    #legal h3 { font-size: 0.95rem !important; }
     #legal p,
-    #legal address { font-size: small; }
+    #legal address { font-size: 0.85rem !important; }
 }
+ @media (max-width: 430px) {
+    body {
+        padding: 0.4rem !important;
+        min-width: unset !important;
+        overflow-x: hidden !important;
+        width: 100vw !important;
+    }
+ 
+    #grid-container {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 100vh !important;
+        min-width: unset !important;
+        width: 100% !important;
+        height: auto !important;
+        gap: 0 !important;
+        border-radius: 0.5rem !important;
+    }
+ 
+    section,
+    #header-bar,
+    #top-left,
+    #top-center,
+    #top-right,
+    #bottom-left,
+    #bottom-center,
+    #bottom-right,
+    #legal {
+        grid-row: unset !important;
+        grid-column: unset !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: unset !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+ 
+    /* ─── Header ─── */
+    #header-bar {
+        font-size: 0.95rem !important;
+        padding: 0.6rem 0.8rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+ 
+    #header-bar h1 {
+        font-size: 1.1rem !important;
+    }
+ 
+    /* ─── Top Left ─── */
+    #top-left {
+        padding: 0.75rem !important;
+    }
+ 
+    #top-left p {
+        font-size: 0.95rem !important;
+        margin: 0.4rem 0 !important;
+    }
+ 
+    /* ─── Top Center (Bild) ─── */
+    #top-center {
+        aspect-ratio: 4 / 3 !important;
+        overflow: hidden !important;
+    }
+ 
+    #top-center img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+    }
+ 
+    /* ─── Top Right ─── */
+    #top-right {
+        padding: 0.75rem !important;
+        font-size: 0.9rem !important;
+    }
+ 
+    /* ─── Bottom Left ─── */
+    #bottom-left {
+        align-items: flex-start !important;
+        padding: 0.75rem !important;
+    }
+ 
+    #bottom-left p {
+        font-size: 0.85rem !important;
+    }
+ 
+    /* ─── Bottom Center ─── */
+    #bottom-center {
+        min-height: unset !important;
+        padding: 0.75rem !important;
+    }
+ 
+    /* ─── Bottom Right ─── */
+    #bottom-right {
+        gap: 0.5rem !important;
+        padding: 0.75rem !important;
+        justify-content: flex-start !important;
+        flex-wrap: wrap !important;
+    }
+ 
+    #bottom-right a {
+        font-size: 1rem !important;
+    }
+ 
+    /* ─── Contact ─── */
+    div#contact-text {
+        font-size: 1rem !important;
+    }
+ 
+    button#contact-button {
+        font-size: 130% !important;
+    }
+ 
+    /* ─── Legal ─── */
+    #legal {
+        overflow-y: visible !important;
+        padding: 0.75rem !important;
+    }
+ 
+    #legal h2 { font-size: 1.1rem !important; }
+    #legal h3 { font-size: 0.95rem !important; }
+    #legal p,
+    #legal address { font-size: 0.85rem !important; }
+}
+ 
  
  
 
