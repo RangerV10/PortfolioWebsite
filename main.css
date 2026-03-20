@@ -185,7 +185,7 @@ section::before {
 
 #top-center img {
     width: 100%;
-    height: 100%;
+    : 100%;
     object-fit: cover;
     border-radius: 1em;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -287,30 +287,37 @@ address p {
 
 /* ─── Mobile ─────────────────────────────────────────────── */
 @media (max-width: 430px) {
+    :root {
+        --mobile-section-height: auto;
+        --mobile-padding: 0.4rem;
+        --mobile-font-base: 0.95rem;
+        --mobile-font-small: 0.85rem;
+    }
+
     html, body {
-        margin: 0 !important;
-        padding: 0 !important;
-        min-width: unset !important;
-        width: 100% !important;
-        overflow-x: hidden !important;
+        margin: 0;
+        padding: 0;
+        min-width: unset;
+        width: 100%;
+        overflow-x: hidden;
     }
- 
+
     body {
-        padding: 0.4rem !important;
+        padding: var(--mobile-padding);
     }
- 
+
     #grid-container {
-        display: flex !important;
-        flex-direction: column !important;
-        min-height: 100vh !important;
-        min-width: unset !important;
-        width: 100% !important;
-        height: auto !important;
-        gap: 0 !important;
-        border-radius: 0.5rem !important;
-        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        min-height: unset;
+        min-width: unset;
+        width: 100%;
+        height: auto;
+        gap: 0;
+        border-radius: 0.5rem;
+        margin: 0;
     }
- 
+
     section,
     #header-bar,
     #top-left,
@@ -320,226 +327,98 @@ address p {
     #bottom-center,
     #bottom-right,
     #legal {
-        grid-row: unset !important;
-        grid-column: unset !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: unset !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        grid-row: unset;
+        grid-column: unset;
+        width: 100%;
+        height: var(--mobile-section-height);
+        min-height: unset;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-left: 0;
+        margin-right: 0;
     }
- 
+
     #header-bar {
-        font-size: 0.95rem !important;
-        padding: 0.6rem 0.8rem !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
+        font-size: var(--mobile-font-base);
+        padding: 0.6rem 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
- 
+
     #header-bar h1 {
-        font-size: 1.1rem !important;
+        font-size: 1.1rem;
     }
- 
+
     #top-left {
-        padding: 0.75rem !important;
+        padding: 0.75rem;
     }
- 
+
     #top-left p {
-        font-size: 0.95rem !important;
-        margin: 0.4rem 0 !important;
+        font-size: var(--mobile-font-base);
+        margin: 0.4rem 0;
     }
- 
+
     #top-center {
-        aspect-ratio: 4 / 3 !important;
-        overflow: hidden !important;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
     }
- 
+
     #top-center img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: top center !important;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
     }
- 
+
     #top-right {
-        padding: 0.75rem !important;
-        font-size: 0.9rem !important;
+        padding: 0.75rem;
+        font-size: var(--mobile-font-base);
     }
- 
+
     #bottom-left {
-        align-items: flex-start !important;
-        padding: 0.75rem !important;
+        align-items: flex-start;
+        padding: 0.75rem;
     }
- 
+
     #bottom-left p {
-        font-size: 0.85rem !important;
+        font-size: var(--mobile-font-small);
     }
- 
+
     #bottom-center {
-        min-height: unset !important;
-        padding: 0.75rem !important;
+        padding: 0.75rem;
+        min-height: 150px;
     }
- 
+
     #bottom-right {
-        gap: 0.5rem !important;
-        padding: 0.75rem !important;
-        justify-content: flex-start !important;
-        flex-wrap: wrap !important;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
- 
+
     #bottom-right a {
-        font-size: 1rem !important;
+        font-size: 1rem;
     }
- 
+
     div#contact-text {
-        font-size: 1rem !important;
+        font-size: 1rem;
     }
- 
+
     button#contact-button {
-        font-size: 130% !important;
+        font-size: 130%;
     }
- 
+
     #legal {
-        overflow-y: visible !important;
-        padding: 0.75rem !important;
+        overflow-y: visible;
+        padding: 0.75rem;
     }
- 
-    #legal h2 { font-size: 1.1rem !important; }
-    #legal h3 { font-size: 0.95rem !important; }
+
+    #legal h2 { font-size: 1.1rem; }
+    #legal h3 { font-size: var(--mobile-font-base); }
     #legal p,
-    #legal address { font-size: 0.85rem !important; }
+    #legal address { font-size: var(--mobile-font-small); }
 }
- @media (max-width: 430px) {
-    body {
-        padding: 0.4rem !important;
-        min-width: unset !important;
-        overflow-x: hidden !important;
-        width: 100vw !important;
-    }
- 
-    #grid-container {
-        display: flex !important;
-        flex-direction: column !important;
-        min-height: 100vh !important;
-        min-width: unset !important;
-        width: 100% !important;
-        height: auto !important;
-        gap: 0 !important;
-        border-radius: 0.5rem !important;
-    }
- 
-    section,
-    #header-bar,
-    #top-left,
-    #top-center,
-    #top-right,
-    #bottom-left,
-    #bottom-center,
-    #bottom-right,
-    #legal {
-        grid-row: unset !important;
-        grid-column: unset !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: unset !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
- 
-    /* ─── Header ─── */
-    #header-bar {
-        font-size: 0.95rem !important;
-        padding: 0.6rem 0.8rem !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-    }
- 
-    #header-bar h1 {
-        font-size: 1.1rem !important;
-    }
- 
-    /* ─── Top Left ─── */
-    #top-left {
-        padding: 0.75rem !important;
-    }
- 
-    #top-left p {
-        font-size: 0.95rem !important;
-        margin: 0.4rem 0 !important;
-    }
- 
-    /* ─── Top Center (Bild) ─── */
-    #top-center {
-        aspect-ratio: 4 / 3 !important;
-        overflow: hidden !important;
-    }
- 
-    #top-center img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: top center !important;
-    }
- 
-    /* ─── Top Right ─── */
-    #top-right {
-        padding: 0.75rem !important;
-        font-size: 0.9rem !important;
-    }
- 
-    /* ─── Bottom Left ─── */
-    #bottom-left {
-        align-items: flex-start !important;
-        padding: 0.75rem !important;
-    }
- 
-    #bottom-left p {
-        font-size: 0.85rem !important;
-    }
- 
-    /* ─── Bottom Center ─── */
-    #bottom-center {
-        min-height: unset !important;
-        padding: 0.75rem !important;
-    }
- 
-    /* ─── Bottom Right ─── */
-    #bottom-right {
-        gap: 0.5rem !important;
-        padding: 0.75rem !important;
-        justify-content: flex-start !important;
-        flex-wrap: wrap !important;
-    }
- 
-    #bottom-right a {
-        font-size: 1rem !important;
-    }
- 
-    /* ─── Contact ─── */
-    div#contact-text {
-        font-size: 1rem !important;
-    }
- 
-    button#contact-button {
-        font-size: 130% !important;
-    }
- 
-    /* ─── Legal ─── */
-    #legal {
-        overflow-y: visible !important;
-        padding: 0.75rem !important;
-    }
- 
-    #legal h2 { font-size: 1.1rem !important; }
-    #legal h3 { font-size: 0.95rem !important; }
-    #legal p,
-    #legal address { font-size: 0.85rem !important; }
-}
- 
  
  
 
