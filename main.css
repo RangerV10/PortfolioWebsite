@@ -2,6 +2,94 @@
 @import "hover.css";
 @import "colors.css";
 
+
+/* ─── Dark Mode Variables ─── */
+[data-theme="dark"] {
+    /* Deine gewünschten Darkmode-Farben */
+    --black: #000000;
+    --beige: #1a1a1a;
+    --gray: #2d2d2d;
+
+    /* Der Farbtausch laut deinen Bildern */
+    --light-green: #23314A;
+    /* Die Kacheln werden dunkelblau */
+    --dark-green: #DB8084;
+    /* Der Text in den Kacheln wird rosa */
+
+    /* Anpassungen für die restlichen Elemente */
+    --dark-blue: #DB8084;
+    /* Der Hintergrund von "bottom-center" wird rosa */
+    --medium-blue: #111a26;
+    /* Der Container im Hintergrund wird sehr dunkel */
+    --light-blue: #090e14;
+    /* Der Body-Hintergrund wird fast schwarz */
+
+    --text-regular-color: var(--dark-green);
+    --text-highlight-color: var(--light-green);
+    /* Text in der "Contact me" Kachel wird blau */
+    --text-link-color: var(--dark-green);
+
+    --section-bg-highlight-color: var(--dark-blue);
+    --section-bg-regular-color: var(--light-green);
+    --container-bg-color: var(--medium-blue);
+    --site-bg-color: var(--light-blue);
+}
+
+/* ─── Style für den Toggle-Schalter ─── */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: var(--gray);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: var(--beige);
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+}
+
+input:checked+.slider {
+    background-color: var(--dark-green);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -87,7 +175,7 @@ section::before {
     grid-column-end: 13;
 }
 
-        
+
 /* ─── Top Left ─── */
 #top-left {
     grid-row: 2 / 6;
@@ -221,73 +309,90 @@ address p {
         min-width: unset;
         overflow-x: hidden;
     }
-
+ 
     #grid-container {
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        grid-template-rows: repeat(8, 12.5vh);
-        min-height: calc(100vh - 2rem);
+        display: flex;
+        flex-direction: column;
+        min-height: unset;
         min-width: unset;
         width: 100%;
+        gap: 0;
     }
-
+ 
+    /* Alle Sections: natürliche Höhe, volle Breite */
+    section {
+        width: 100%;
+        height: auto !important;
+        min-height: unset !important;
+        grid-row: unset !important;
+        grid-column: unset !important;
+    }
+ 
+    /* ─── Header ─── */
     #header-bar {
-        grid-row: 1 / 2;
-        grid-column: 1 / 13;
         font-size: large;
+        padding: 0.75rem 1rem;
     }
-
-    #top-left {
-        grid-row: 2 / 6;
-        grid-column: 1 / 6;
-    }
-
+ 
+    /* ─── Top Left ─── */
     #top-left p {
         font-size: medium;
         margin: 0.5rem 0;
     }
-
+ 
+    /* ─── Top Center (Bild) ─── */
     #top-center {
-        grid-row: 2 / 6;
-        grid-column: 6 / 9;
+        aspect-ratio: 16 / 9;
+        height: auto;
     }
-
+ 
+    #top-center img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+ 
+    /* ─── Top Right ─── */
     #top-right {
-        grid-row: 2 / 8;
-        grid-column: 9 / 13;
+        filter: none;
     }
-
-    #bottom-left {
-        grid-row: 6 / 9;
-        grid-column: 1 / 5;
-    }
-
+ 
+    /* ─── Bottom Left ─── */
     #bottom-left p {
         font-size: small;
     }
-
+ 
+    /* ─── Bottom Center ─── */
     #bottom-center {
-        grid-row: 6 / 9;
-        grid-column: 5 / 9;
+        min-height: 8rem;
     }
-
+ 
+    /* ─── Bottom Right ─── */
     #bottom-right {
-        grid-row: 8 / 9;
-        grid-column: 9 / 13;
-        gap: 0.25rem;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        justify-content: flex-start;
     }
-
+ 
     #bottom-right a {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
-
+ 
+    /* ─── Contact ─── */
     div#contact-text {
         font-size: large;
     }
-
+ 
     button#contact-button {
         font-size: 150%;
     }
+ 
+    /* ─── Legal ─── */
+    #legal {
+        overflow-y: visible;
+    }
 }
+ 
 
 
 /* ─── Absoluter Fullscreen-Fix (Kein Scrollen!) ────────── */
