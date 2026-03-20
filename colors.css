@@ -3,10 +3,10 @@
     --light-blue: #8fa1ba;
     --rose: #db8084;
     --text-regular-color: var(--dark-blue);
-    --text-highlight-color: var(--rose);
+    --text-highlight-color: var(--dark-blue);
     --text-link-color: var(--dark-blue);
-    --section-bg-highlight-color: var(--dark-blue);
+    --section-bg-highlight-color: var(--light-blue);
     --section-bg-regular-color: var(--rose);
-    --container-bg-color: var(--light-blue);
-    --site-bg-color: var(--dark-blue);
+    --container-bg-color: var(--dark-blue);
+    --site-bg-color: var(--light-blue);
 }
