@@ -428,39 +428,3 @@ body:has(#intro-overlay[style*="display: flex"]) {
     overflow: hidden !important;
     height: 100vh !important;
 }
-
-.inria-serif-light {
-    font-family: "Inria Serif", serif;
-    font-weight: 300;
-    font-style: normal;
-}
-
-.inria-serif-regular {
-    font-family: "Inria Serif", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.inria-serif-bold {
-    font-family: "Inria Serif", serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.inria-serif-light-italic {
-    font-family: "Inria Serif", serif;
-    font-weight: 300;
-    font-style: italic;
-}
-
-.inria-serif-regular-italic {
-    font-family: "Inria Serif", serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.inria-serif-bold-italic {
-    font-family: "Inria Serif", serif;
-    font-weight: 700;
-    font-style: italic;
-}
