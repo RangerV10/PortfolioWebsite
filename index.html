@@ -28,16 +28,20 @@
     <div id="grid-container">
 
         <section id="header-bar"
-            style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 10px 20px; box-sizing: border-box;">
-            <h1><a href="./index.html" style="text-decoration: none;">Cherry-Sue Koslowski</a></h1>
+            style="display: flex; align-items: center; padding: 15px 30px; box-sizing: border-box; width: 100%;">
+            <h1 style="margin: 0; font-size: 1.4rem; white-space: nowrap;">
+                <a href="./index.html" style="text-decoration: none;">Cherry-Sue Koslowski</a>
+            </h1>
 
-            <div style="display: flex; align-items: center; gap: 20px;">
+            <div style="margin-left: auto; display: flex; align-items: center; gap: 30px;">
                 <div class="theme-switch-wrapper">
                     <label class="theme-switch" for="checkbox">
                         <input type="checkbox" id="checkbox" />
                         <div class="slider round">
-                            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="position: absolute; left: 6px; top: 50%; transform: translateY(-50%); pointer-events: none;">
                                 <circle cx="12" cy="12" r="5"></circle>
                                 <line x1="12" y1="1" x2="12" y2="3"></line>
                                 <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -48,14 +52,17 @@
                                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                             </svg>
-                            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); pointer-events: none;">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                             </svg>
                         </div>
                     </label>
                 </div>
-                <a href="./impressum.html" style="text-decoration: none;">Impressum</a>
+                <a href="./impressum.html"
+                    style="text-decoration: none; font-weight: 600; white-space: nowrap;">Impressum</a>
             </div>
         </section>
 
