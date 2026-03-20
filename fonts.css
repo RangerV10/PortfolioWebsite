@@ -12,19 +12,4 @@ a {
 
 
 
-h1 {
-    font-weight: normal;
-    font-family: "Inria Serif";
-    font-size: 3rem;
-    text-transform: uppercase;
-}
 
-#impressum-button {
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    letter-spacing: 1pt;
-}
-
-#impressum-button:hover a {
-    text-decoration: underline;
-}
