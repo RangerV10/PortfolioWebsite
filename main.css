@@ -1,4 +1,5 @@
 @import "animations.css";
+@import "hover.css";    
 
 :root {
     --black: #11120F;
@@ -80,11 +81,7 @@ section::before {
     border-radius: inherit;
 }
 
-section:hover::before {
-    left: 150%;
-    transition: left 1.2s ease-in-out;
-    /* Langsamer & flüssiger */
-}
+
 
 /* ─── Header ─── */
 #header-bar {
@@ -98,12 +95,6 @@ section:hover::before {
     justify-content: space-between;
 }
 
-#header-bar:hover {
-    transform: translateY(-3px);
-    letter-spacing: 1px;
-    background-color: #c4d4b8;
-    /* Minimaler Farb-Shift */
-}
 
 /* ─── Legal Section ─── */
 #legal {
@@ -120,10 +111,8 @@ section:hover::before {
     grid-column: 1 / 6;
 }
 
-#top-left:hover {
-    transform: scale(1.01) translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+
+
 
 #top-left p {
     font-size: x-large;
@@ -131,9 +120,6 @@ section:hover::before {
     transition: transform 0.4s;
 }
 
-#top-left:hover p {
-    transform: translateX(5px);
-}
 
 /* ─── Top Center (Das Bild-Highlight) ─── */
 #top-center {
@@ -151,20 +137,13 @@ section:hover::before {
         filter 0.5s ease;
 }
 
-#top-center:hover {
-    transform: rotate(-1deg) scale(1.00);
-}
 
-#top-center:hover img {
-    transform: scale(1.1) rotate(1deg);
-    /* Counter-Rotation Effekt */
-    filter: brightness(1.1) saturate(1.1);
-}
 
 /* ─── Top Right ─── */
 #top-right {
     grid-row: 2 / 8;
     grid-column: 9 / 13;
+    filter: brightness(1.1) saturate(1.1);
 }
 
 
@@ -187,12 +166,6 @@ section:hover::before {
     position: relative;
 }
 
-#bottom-center:hover {
-    transform: scale(1.02);
-    box-shadow:
-        0 0 20px rgba(187, 202, 173, 0.2),
-        0 15px 30px rgba(0, 0, 0, 0.3);
-}
 
 /* ─── Bottom Right (Bounce Links) ─── */
 #bottom-right {
