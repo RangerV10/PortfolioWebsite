@@ -1,23 +1,20 @@
 /* ─── Dark Mode Variables ─── */
 :root[data-theme="dark"] {
+    --text-regular-color: var(--rose);
+    --text-highlight-color: var(--dark-blue);
+    --text-link-color: var(--rose);
 
-    --section-bg-regular-color: #23314A;
-    --text-regular-color: #DB8084;
-
-    --section-bg-highlight-color: #DB8084;
-    --text-highlight-color: #23314A;
-
-
-    --text-link-color: #DB8084;
+    --section-bg-highlight-color: var(--rose);
+    --section-bg-regular-color: var(--dark-blue);
 
     --container-bg-color: #111a26;
     --site-bg-color: #090e14;
 
-    --black: #000000;
-    --beige: #1a1a1a;
-    --gray: #2d2d2d;
+    /* Toggle Schalter: Darkmode */
+    --switch-bg: #2d2d2d;
+    --switch-knob: #1a1a1a;
+    --switch-checked-bg: var(--rose);
 }
-
 
 /* ─── Style für den Toggle-Schalter ─── */
 .theme-switch-wrapper {
@@ -37,7 +34,7 @@
 }
 
 .slider {
-    background-color: var(--gray);
+    background-color: var(--switch-bg);
     bottom: 0;
     cursor: pointer;
     left: 0;
@@ -48,7 +45,7 @@
 }
 
 .slider:before {
-    background-color: var(--beige);
+    background-color: var(--switch-knob);
     bottom: 4px;
     content: "";
     height: 16px;
@@ -59,7 +56,7 @@
 }
 
 input:checked+.slider {
-    background-color: var(--dark-green);
+    background-color: var(--switch-checked-bg);
 }
 
 input:checked+.slider:before {
@@ -185,13 +182,12 @@ section::before {
 
 #top-center img {
     width: 100%;
-    : 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 1em;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
         filter 0.5s ease;
 }
-
 
 
 /* ─── Top Right ─── */
@@ -294,7 +290,8 @@ address p {
         --mobile-font-small: 0.85rem;
     }
 
-    html, body {
+    html,
+    body {
         margin: 0;
         padding: 0;
         min-width: unset;
@@ -414,13 +411,21 @@ address p {
         padding: 0.75rem;
     }
 
-    #legal h2 { font-size: 1.1rem; }
-    #legal h3 { font-size: var(--mobile-font-base); }
+    #legal h2 {
+        font-size: 1.1rem;
+    }
+
+    #legal h3 {
+        font-size: var(--mobile-font-base);
+    }
+
     #legal p,
-    #legal address { font-size: var(--mobile-font-small); }
+    #legal address {
+        font-size: var(--mobile-font-small);
+    }
 }
- 
- 
+
+
 
 
 
