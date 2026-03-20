@@ -142,7 +142,6 @@ section::before {
 #header-bar {
     grid-row: 1 / 2;
     grid-column: 1 / 13;
-    font-size: xx-large;
     align-content: center;
     padding: 0 1rem;
     display: flex;
@@ -159,20 +158,14 @@ section::before {
     grid-column-end: 13;
 }
 
-
 /* ─── Top Left ─── */
 #top-left {
     grid-row: 2 / 6;
     grid-column: 1 / 6;
 }
 
-
-
-
 #top-left p {
-    font-size: x-large;
-    margin: 1rem 0;
-    transition: transform 0.4s;
+    transition: transform 0.4s; 
 }
 
 
