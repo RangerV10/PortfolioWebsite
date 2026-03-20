@@ -27,9 +27,7 @@ section::before {
 section:hover::before {
     left: 150%;
 }
- 
-
-#header-bar:hover {
+ #header-bar:hover {
     transform: translateY(-3px);
     letter-spacing: 1px;
     z-index: 10;
@@ -73,14 +71,12 @@ section:hover::before {
     z-index: 10;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
- 
 
 #bottom-center:hover {
     transform: scale(1.04);
     z-index: 10;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
- 
 
 #bottom-right:hover {
     transform: scale(1.04);
@@ -108,3 +104,85 @@ button#contact-button:hover {
     transform: scale(1.25) rotate(45deg);
 }
  
+
+ 
+#legal {
+    grid-row-start: 2;
+    grid-row-end: 9;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    overflow-y: auto;
+    line-height: 1.7;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.4s ease;
+}
+ 
+#legal:hover {
+    transform: scale(1.01) translateY(-4px);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+ 
+#legal h2 {
+    font-size: x-large;
+    margin: 1.5rem 0 0.4rem;
+    color: var(--dark-green);
+    border-bottom: 2px solid var(--dark-green);
+    padding-bottom: 0.25rem;
+}
+ 
+#legal h2:first-child {
+    margin-top: 0;
+}
+ 
+#legal h3 {
+    font-size: large;
+    margin: 1rem 0 0.3rem;
+    color: var(--dark-green);
+}
+ 
+#legal p,
+#legal address {
+    font-size: medium;
+    color: var(--dark-green);
+    max-width: 75ch;
+    margin-bottom: 0.75rem;
+}
+ 
+#legal address {
+    font-style: normal;
+}
+ 
+#legal a {
+    color: var(--dark-green);
+    text-underline-offset: 3px;
+}
+ 
+#legal a:hover {
+    opacity: 0.7;
+}
+ 
+#return-to-home {
+    margin-top: 2rem;
+    font-size: large;
+    font-weight: bold;
+}
+ 
+#return-to-home a {
+    color: var(--dark-green);
+    text-decoration: none;
+    transition: letter-spacing 0.3s ease, opacity 0.3s ease;
+}
+ 
+#return-to-home a:hover {
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+ 
+
+@media (max-width: 900px) {
+    #legal h2 { font-size: large; }
+    #legal h3 { font-size: medium; }
+    #legal p,
+    #legal address { font-size: small; }
+}
