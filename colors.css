@@ -1,0 +1,17 @@
+* {
+    --black: #11120F;
+    --beige: #D2C9B2;
+    --gray: #4C4B42;
+    --light-green: #BBCAAD;
+    --dark-green: #193416;
+    --dark-blue: #09304D;
+    --medium-blue: #0C3A5C;
+    --light-blue: #124B76;
+    --text-regular-color: var(--dark-green);
+    --text-highlight-color: var(--light-green);
+    --text-link-color: var(--dark-green);
+    --section-bg-highlight-color: var(--dark-blue);
+    --section-bg-regular-color: var(--light-green);
+    --container-bg-color: var(--medium-blue);
+    --site-bg-color: var(--light-blue);
+}
