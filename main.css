@@ -209,8 +209,6 @@ section::before {
 #top-right {
     grid-row: 2 / 8;
     grid-column: 9 / 13;
-    filter: brightness(1.1) saturate(1.1);
-    color: var(--dark-blue);
 }
 
 
