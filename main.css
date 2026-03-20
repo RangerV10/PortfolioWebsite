@@ -93,6 +93,9 @@ section:hover::before {
     font-size: xx-large;
     align-content: center;
     padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #header-bar:hover {
@@ -102,6 +105,15 @@ section:hover::before {
     /* Minimaler Farb-Shift */
 }
 
+/* ─── Legal Section ─── */
+#legal {
+    grid-row-start: 2;
+    grid-row-end: 9;
+    grid-column-start: 1;
+    grid-column-end: 13;
+}
+
+        
 /* ─── Top Left ─── */
 #top-left {
     grid-row: 2 / 6;
